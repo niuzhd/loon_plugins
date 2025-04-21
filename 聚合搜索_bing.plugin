@@ -1,0 +1,27 @@
+#!name=Safari聚合搜索_bing
+#!desc=默认必应引擎，地址栏输入:g 充电宝 ,即可切换为谷歌搜索,b xxx 百度，gi github， y 有道， w wikipedia， te Google翻译为英文
+#!openUrl=
+#!author=zzzn
+#!icon=
+
+[URL Rewrite]
+# w (Wikipedia中文)
+^https:\/\/www\.bing\.com\/search\?q=w\+([^&]+).+ https://zh.wikipedia.org/wiki/$1 307
+
+# y (有道词典)
+^https:\/\/www\.bing\.com\/search\?q=y\+([^&]+) https://dict.youdao.com/search?q=$1 307
+
+# te (Google 译至英)
+^https:\/\/www\.bing\.com\/search\?q=te\+([^&]+) https://translate.google.com/#view=home&op=translate&sl=auto&tl=en&text=$1 307
+
+# gi (GitHub)
+^https:\/\/www\.bing\.com\/search\?q=gi\+([^&]+) https://github.com/search?q=$1 307
+
+# g (Google)
+^https:\/\/www\.bing\.com\/search\?q=g\+([^&]+) https://www.google.com/search?q=$1 307
+
+# b (百度)
+^https:\/\/www\.bing\.com\/search\?q=b\+([^&]+) https://m.baidu.com/s?word=$1 307
+
+[MITM]
+hostname = www.bing.com,www.google.com
