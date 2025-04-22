@@ -1,5 +1,5 @@
 #!name=Safari聚合搜索_google
-#!desc=默认必应引擎，地址栏输入:b xxx 百度，gi github， y 有道， w wikipedia， te Google翻译为英文
+#!desc=默认google引擎，地址栏输入:b xxx 百度，gi github， y 有道， w wikipedia， te Google翻译为英文
 #!openUrl=
 #!author=zzzn
 #!icon=
