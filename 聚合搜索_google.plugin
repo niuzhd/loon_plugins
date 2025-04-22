@@ -1,0 +1,24 @@
+#!name=Safari聚合搜索_google
+#!desc=默认必应引擎，地址栏输入:b xxx 百度，gi github， y 有道， w wikipedia， te Google翻译为英文
+#!openUrl=
+#!author=zzzn
+#!icon=
+
+[URL Rewrite]
+# w (Wikipedia中文)
+^https:\/\/www\.google\.com\/search\?q=w\+([^&]+).+ https://zh.wikipedia.org/wiki/$1 307
+
+# y (有道词典)
+^https:\/\/www\.google\.com\/search\?q=y\+([^&]+) https://dict.youdao.com/search?q=$1 307
+
+# te (Google 译至英)
+^https:\/\/www\.google\.com\/search\?q=te\+([^&]+) https://translate.google.com/#view=home&op=translate&sl=auto&tl=en&text=$1 307
+
+# gi (GitHub)
+^https:\/\/www\.google\.com\/search\?q=gi\+([^&]+) https://github.com/search?q=$1 307
+
+# b (百度)
+^https:\/\/www\.google\.com\/search\?q=b\+([^&]+) https://m.baidu.com/s?word=$1 307
+
+[MITM]
+hostname = www.google.com
